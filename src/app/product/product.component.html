@@ -1,0 +1,34 @@
+<section class="product-container container">
+  <h2>Select your favourite products...</h2>
+  <section class="top-bar">
+    <section class="top-search"></section>
+    
+    <section class="sort-top"></section>
+  </section>
+
+  
+  <section class="side-filter"></section>
+  <div class="product-list">
+    <div class="product pad-16 text-center" *ngFor="let product of productLists">
+      <figure class="product-image-container ">
+        <img src="assets/images/{{product.imgSrc}}" alt="Product Image" class="product-image"/>
+      </figure>
+      <div class="product-detail">
+        <p>{{product.name}}</p>
+        <p class="product-price">Price : <span class="pad-r-8">{{product.price}}</span><span>{{product.currency}}</span></p>
+        <button class="product-add" *ngIf="product.stockAvailable" (click)="handleAddtoCart(product)">Add To Cart</button>
+        <button class="product-buynow" *ngIf="product.stockAvailable" (click)="addAndMoveToCart(product.name)">Buy Now</button>
+        <div class="product-quantity row">
+          <input type="button" value="-" class="col-2" (click)="decrement(product)"/>
+          <label class="col">0 in Cart</label>
+          <input type="button" value="+" class="col-2" (click)="increment(product)"/>
+        </div>
+        <span *ngIf="!product.stockAvailable">Sold Out</span>
+        <button *ngIf="addedToCart" class="product-remove">Remove</button>
+        <a class="product-link" href="productDetails/{{product.pid}}">View Product Details</a>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>

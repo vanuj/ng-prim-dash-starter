@@ -1,0 +1,25 @@
+.product-container {
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .product {
+        box-shadow:  0 0 5px #333;
+        margin-bottom: 2rem;
+        max-width: 200px;
+        display: inline-block;
+        &-image {
+            max-width: 100%;
+        }
+        &-link {
+            display: block;
+            padding: 1rem;
+        }
+        &-quantity{
+            padding: 1rem 0;
+            input { border-color: transparent};
+            input:hover, input:focus { border-color:#ccc}
+        }
+    }   
+}
