@@ -1,0 +1,40 @@
+<section class="product-container container">
+  <carousel>
+    <slide>
+      <img src="http://placehold.it/900x350" alt="first slide" style="display: block; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="http://placehold.it/900x350" alt="second slide" style="display: block; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </slide>
+    <slide>
+      <img src="http://placehold.it/900x350" alt="third slide" style="display: block; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </slide>
+  </carousel>  
+    
+    <div class="row mt-4">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor='let item of productList'>
+        <a href='/products/{{item.category}}' class="card h-100">
+          <div class="card-body">
+              <img class="card-img-top" src="assets/images/{{item.imgSrc}}" alt="">
+            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
+          </div>
+          <div class="card-footer">
+            <h4 class="card-title">{{item.title}}</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+</section>
